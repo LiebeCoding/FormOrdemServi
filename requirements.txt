@@ -1,1 +1,1 @@
-streamlit_antd_components==0.0.1
+streamlit_antd_components
