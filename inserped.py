@@ -8,7 +8,7 @@ VsttsPed = st.text_input('Status do Pedido')
 VmdlCar = st.text_input('Modelo do Veículo')
 VplcCar = st.text_input('Placa do Veículo')
 VchsCar = st.text_input('Chassi do Veículo')
-
+VurgPed = st.text_input('Urgência do Veículo')
 
 def QueryInsertParameter():
     vInsert = f"""
@@ -18,7 +18,8 @@ def QueryInsertParameter():
     status_pedido,
     modelo_veiculo,
     placa_veiculo,
-    chassi_veiculo)
+    chassi_veiculo,
+    urgencia_ped)
     VALUES(
     '{VidCli}'
     ,'{VIDServ}'
@@ -26,6 +27,7 @@ def QueryInsertParameter():
     ,'{VmdlCar}'
     ,'{VplcCar }'
     ,'{VchsCar}'
+    ,'{VurgPed}'
     )
     """
     return vInsert

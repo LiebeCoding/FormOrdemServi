@@ -53,6 +53,14 @@ def QueryInsertParameter5():
     """
     return vInsert
 
+def QueryInsertParameter6():
+    vInsert = f"""
+    SELECT urgencia_ped
+    FROM tbPedidos
+    WHERE id_pedido = {VidPed}
+    """
+    return vInsert
+
 def get_control_Connection():
     vServer = 'DESKTOP-CO5BKKJ\SQLEXPRESS'
     vDatabase = 'MECHANICS'
@@ -71,7 +79,7 @@ def ExeculteCommandSql(Query: str):
             return None
 
 
-if st.button("Consultar Tipo de Serviço"):
+if st.button("Consultar Pedido"):
     vQuery = (QueryInsertParameter())
     if vQuery is not None:
         vQuery1 = (QueryInsertParameter1())
@@ -79,12 +87,14 @@ if st.button("Consultar Tipo de Serviço"):
         vQuery3 = (QueryInsertParameter3())
         vQuery4 = (QueryInsertParameter4())
         vQuery5 = (QueryInsertParameter5())
+        vQuery6 = (QueryInsertParameter6())
         id_cliente = ExeculteCommandSql(vQuery)
         id_servico = ExeculteCommandSql(vQuery1)
         status_pedido = ExeculteCommandSql(vQuery2)
         modelo_veiculo = ExeculteCommandSql(vQuery3)
         placa_veiculo = ExeculteCommandSql(vQuery4)
         chassi_veiculo = ExeculteCommandSql(vQuery5)
+        urgencia_ped = ExeculteCommandSql(vQuery6)
 
         if id_cliente is not None and id_servico is not None and status_pedido is not None and modelo_veiculo is not None and placa_veiculo is not None and chassi_veiculo is not None:
             st.sidebar.write(f"ID do Cliente: {id_cliente}")
@@ -93,6 +103,7 @@ if st.button("Consultar Tipo de Serviço"):
             st.sidebar.write(f"Modelo do veículo: {modelo_veiculo}")
             st.sidebar.write(f"Placa do veículo: {placa_veiculo}")
             st.sidebar.write(f"Chassi do Veiculo: {chassi_veiculo}")
+            st.sidebar.write(f"Urgência do Pedido: {urgencia_ped}")
         else:
             st.sidebar.write("Pedido está completo")
 

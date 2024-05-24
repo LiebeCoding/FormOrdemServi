@@ -17,21 +17,15 @@ st.markdown(
 )
 
 # Título da barra lateral
-st.sidebar.title("Menu - Oficina Mechanics")
+st.sidebar.title(""" Menu
+                    Isael - Oficina e Funilaria """)
+
 # Exibindo a mensagem formatada em Markdown na barra lateral
 st.sidebar.markdown("""
 **Versão do Sistema:** 1.001
 
----
+Email de serviço ao cliente: rvcorp.clientservices@rvcorp.com
 
-Bem vindo ao Sistema de Gerenciamento Mechanics
-
-Selecione uma das opções do menu ao lado para acessar as funcionalidades:
-
-Caso não encontre alguma função desejada, entre em contato com nosso time de Client Services pelo e-mail:
-rvcorp.clientservices@rvcorp.com.
-
-RV. Corp @ 2024
 """)
 
 
@@ -39,13 +33,14 @@ RV. Corp @ 2024
 menu_options = [
     sac.MenuItem('Cadastros', icon='plus-circle-fill', children=[
         sac.MenuItem('Criar Novos Pedidos', icon='plus-circle-fill'),
-        sac.MenuItem('Cadastrar Novos Serviços', icon='plus-circle-fill'),
+        sac.MenuItem('Cadastra r Novos Serviços', icon='plus-circle-fill'),
         sac.MenuItem('Cadastrar Clientes', icon='plus-circle-fill'),
         sac.MenuItem('Cadastrar Funcionários', icon='plus-circle-fill'),
         ]),
     sac.MenuItem('Consultas', icon='eye-fill', children=[
         sac.MenuItem('Consultar Pedidos', icon='eye-fill'),
         sac.MenuItem('Consultar Histórico de Serviços', icon='eye-fill'),
+        sac.MenuItem('Consultar Funcionários', icon='eye-fill'),
 ])]
 
 # Criando o menu dropdown na sidebar
@@ -66,5 +61,7 @@ if menu_selected is not None:
         subprocess.Popen(["streamlit", "run", "consped.py"])
     elif menu_selected == 'Consultar Histórico de Serviços':
         subprocess.Popen(["streamlit", "run", "histserv.py"])
+    elif menu_selected == 'Consultar Funcionários':
+        subprocess.Popen(["streamlit", "run", "consfunc.py"])
 
 

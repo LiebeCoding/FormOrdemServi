@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-streamlit_antd_components
-=======
-streamlit_antd_components==0.0.1
->>>>>>> githuub/master
