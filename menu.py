@@ -33,7 +33,7 @@ Email de serviço ao cliente: rvcorp.clientservices@rvcorp.com
 menu_options = [
     sac.MenuItem('Cadastros', icon='plus-circle-fill', children=[
         sac.MenuItem('Criar Novos Pedidos', icon='plus-circle-fill'),
-        sac.MenuItem('Cadastra r Novos Serviços', icon='plus-circle-fill'),
+        sac.MenuItem('Cadastrar Novos Serviços', icon='plus-circle-fill'),
         sac.MenuItem('Cadastrar Clientes', icon='plus-circle-fill'),
         sac.MenuItem('Cadastrar Funcionários', icon='plus-circle-fill'),
         ]),
